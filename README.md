@@ -1,23 +1,31 @@
 ## Table of Contents
 
+  * [Abstract](#abstract)
   * [Getting Started](#getting-started)
 
+## Getting Started
+
+- This app is using Django DRF for backend and React for frontend.
+- Both of the apps are run on different port.
+- User is authenticated using JWT auth token.
+- Django uses CORS package to allow React app communicate with Django
 
 ## Getting Started
 
 ### 1. Github
 
-- Clone this repository
+- Clone repository using below command
 
   ```
-  git clone https://github.com/gajanankathar/gftglobal.git
+  https://github.com/gajanankathar/fsp-gftglobal.git
   ```
   
    
 ### 2. Virtual environment
 
-- Create a virtual environment using python3.6 or above
+- Create a virtual environment inside backend directory using python3.6 or above 
   ```
+  cd backend
   python -m venv venv
   ```
 - Activate it
@@ -33,7 +41,7 @@
    
 ### 3. `pip`
 
-- Find the requirements file
+- You will find the requirements.txt file inside backend/gftglobal directory
 - Install all the requirements from requirements.txt
   ```
   pip install -r requirements.txt
@@ -41,6 +49,8 @@
   
 ### 4. DB Migrations
 
+- Do DB migrations
+- You should be in backend/gftglobal directory to fire below commands
   ```
   python manage.py makemigrations
   python manage.py migrate
@@ -48,29 +58,39 @@
 
 ### 4. Run Django Server.
 
+- Ensure that, you in backend/gftglobal directory to run django development server
   ```
   python manage.py runserver
   ```
+- Now, our django server is up and running without any issues
+
+### 5. Run React app 
+
+- Run react app in separate terminal
+- Go to the frontend/partner-portal directory 
+  ```
+  npm start
+  ```
+- This will run react app on http://localhost:3000/
+
 
 ### 5. Sitemap 
 
-- Home page
+- Create new customer
   ```
-  http://localhost:8000/
+  http://localhost:3000/register/
   ```
+- Once you fill all the details and click register button, new customer gets added
+to DB and new user created with username as customer first name in lower case and 
+with default password as "password".
 
-- Create customer page
+- Login using new user
   ```
-  http://localhost:8000/register/
+  http://localhost:3000/login/
   ```
-  
-- Login - User is created when customer got created in system. Username will be your customer first name in lowercase and default password is "password".
-  ```
-  http://localhost:8000/login/
-  ```
-  
-- Update customer page
-  ```
-  http://localhost:8000/update/1/
-  ```
+- You are redirected to home page after login and on home page customer details will be displayed.
 
+- If you wish to edit, choose edit button and edit the form and hit update button.
+- Your changes will be saved in the DB and same reflected on the home page.
+  
+- Logout: Click on the "Logout" button at the right upper corner to logout from the system.
