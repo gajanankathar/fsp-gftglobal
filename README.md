@@ -64,6 +64,13 @@
   ```
 - Now, our django server is up and running without any issues
 
+### 5. Git clone React submodule
+
+- Make sure to also clone react app git submodules.
+  ```
+  git submodule update --init
+  ```
+
 ### 5. Run React app 
 
 - Run react app in separate terminal
