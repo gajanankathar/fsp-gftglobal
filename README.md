@@ -71,17 +71,18 @@
   git submodule update --init
   ```
 
-### 5. Run React app 
+### 6. Run React app 
 
 - Run react app in separate terminal
 - Go to the frontend/partner-portal directory 
   ```
+  npm install
   npm start
   ```
 - This will run react app on http://localhost:3000/
 
 
-### 5. Sitemap 
+### 6. Sitemap 
 
 - Create new customer
   ```
